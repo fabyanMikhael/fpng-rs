@@ -18,14 +18,14 @@ impl Encoder {
 
     #[inline(always)]
     fn _encode_image(image_start: *mut u8, w: u32, h: u32, channels: u32) -> Option<Vec<u8>> {
-        let mut failed = false;
+        let mut failed: bool = false;
         let out =
             unsafe { ffi::encode_buffer(image_start, w, h, channels, &mut failed as *mut bool) };
 
         if failed {
-            return None;
-        } else {
             Some(out.into_iter().copied().collect())
+        } else {
+            None
         }
     }
 }
