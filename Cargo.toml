@@ -1,0 +1,15 @@
+[package]
+name = "fpng-rs"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+autocxx = "0.25.0"
+cxx = "1.0"
+image = "0.24.6"
+
+[build-dependencies]
+autocxx-build = "0.25.0"
+miette = { version = "5.8.0", features = ["fancy"] } # optional but gives nicer error messages!
