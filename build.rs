@@ -11,7 +11,7 @@ fn main() -> miette::Result<()> {
         .flag_if_supported("-mpclmul")
         .flag_if_supported("-fno-strict-aliasing")
         .flag_if_supported("-w")
-        .compile("fpng-rs"); // arbitrary library name, pick anything
+        .compile("fpng"); // arbitrary library name, pick anything
     println!("cargo:rerun-if-changed=src/lib.rs");
     println!("cargo:rerun-if-changed=src/fpng-rs.h");
     println!("cargo:rerun-if-changed=src/fpng-rs.cpp");
